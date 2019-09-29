@@ -20,7 +20,9 @@ export class AppComponent {
   deleteItem(todo) {
     for (let i = 0; i <= this.todoArray.length; i++) {
       if (todo === this.todoArray[i]) {
-        this.todoArray.splice(i, 1);
+        if(confirm("Are you sure you want to delete it?")) {
+          this.todoArray.splice(i, 1);
+        }
         break;
       }
     }
